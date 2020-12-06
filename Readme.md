@@ -1,26 +1,18 @@
-# docker-mirakurun-epgstation
-[Mirakurun](https://github.com/Chinachu/Mirakurun) + [EPGStation](https://github.com/l3tnun/EPGStation) の Docker コンテナ
+# docker-mirakurun-epgstation-for-raspi4
+[docker-mirakurun-epgstation](https://github.com/l3tnun/docker-mirakurun-epgstation)をRaspberry Pi 4で動かせるようにしたもの．
 
 ## 前提条件
+- Raspberry Pi 4
+  - (推奨) 外部ストレージの利用とマウント
 - Docker, docker-compose の導入が必須
-- ホスト上の pcscd は停止する
-- PT3用に設定済みなのでPT3での使用を想定
 
 ## インストール手順
-
+- gitからrepositoryをcloneしてきて，dockerのビルドを行います．
 ```sh
-$ git clone https://github.com/l3tnun/docker-mirakurun-epgstation.git
-$ cd docker-mirakurun-epgstation
-$ cp docker-compose-sample.yml docker-compose.yml
-$ cp epgstation/config/config.sample.json epgstation/config/config.json
+$ git clone https://github.com/wan-nyan-wan/docker-mirakurun-epgstation-for-raspi4.git
+$ cd docker-mirakurun-epgstation-for-raspi4
 $ sudo docker-compose pull
 $ sudo docker-compose build
-
-#チャンネル設定
-$ vim mirakurun/conf/channels.yml
-
-#コメントアウトされている restart や user の設定を適宜変更する
-$ vim docker-compose.yml
 ```
 
 ## 起動
@@ -48,23 +40,14 @@ $ sudo docker-compose down
 * ポート番号: 8889
 
 ### 各種ファイル保存先
-
-* 録画データ
-
+- HDD等の外部ストレージに保存先を書き換える場合は，外部ストレージをそれぞれのフォルダへとマウントする．
+- 録画データ
 ```./recorded```
-
-* サムネイル
-
+- サムネイル
 ```./epgstation/thumbnail```
-
-* 予約情報と HLS 配信時の一時ファイル
-
+- 予約情報と HLS 配信時の一時ファイル
 ```./epgstation/data```
-
-* EPGStation 設定ファイル
-
+- EPGStation 設定ファイル
 ```./epgstation/config```
-
-* EPGStation のログ
-
+- EPGStation のログ
 ```./epgstation/logs```

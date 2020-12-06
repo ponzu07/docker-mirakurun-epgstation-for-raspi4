@@ -5,6 +5,8 @@
 .DS_Store
 /recorded/*
 /mirakurun/data/*
+/mirakurun/conf/channels.yml
+/mirakurun/conf/tuners.yml
 /epgstation/thumbnail/*.jpg
 /epgstation/data/streamfiles/*.ts
 /epgstation/data/streamfiles/*.m3u8
