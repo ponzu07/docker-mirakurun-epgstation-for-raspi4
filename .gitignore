@@ -16,4 +16,3 @@
 !/epgstation/config/serviceLogConfig.json
 /epgstation/data/*.json
 !.gitkeep
-/docker-compose.yml
