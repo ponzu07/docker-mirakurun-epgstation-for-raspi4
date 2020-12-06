@@ -7,7 +7,7 @@
 - Docker, docker-compose の導入が必須
 
 ## インストール手順
-- gitからrepositoryをcloneしてきて，dockerのビルドを行います．
+- gitからrepositoryをcloneしてきて，dockerのビルドを行う
 ```sh
 $ git clone https://github.com/wan-nyan-wan/docker-mirakurun-epgstation-for-raspi4.git
 $ cd docker-mirakurun-epgstation-for-raspi4
@@ -16,14 +16,13 @@ $ sudo docker-compose build
 ```
 
 ## 起動
-
+- Dockerコンテナを立ち上げる
+- mirakurun の EPG 更新を待ってからブラウザで http://DockerHostIP:8888 へアクセスし動作を確認する
 ```sh
 $ sudo docker-compose up -d
 ```
-mirakurun の EPG 更新を待ってからブラウザで http://DockerHostIP:8888 へアクセスし動作を確認する
 
 ## 停止
-
 ```sh
 $ sudo docker-compose down
 ```
